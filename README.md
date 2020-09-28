@@ -19,6 +19,25 @@ https://github.com/micropython/micropython/blob/master/tools/make-frozen.py
 ```
 ***PLACE FILE IN THE tools DIRECTORY AS make-frozen.py***
 
+## STEP 3: Create frozen/firmware Directory
+```bash
+mkdir frozen
+cd frozen
+mkdir firmware
+cd ..
+```
+
+## STEP 4: Create hello.py
+```python
+print('hello')
+```
+***PLACE FILE IN THE frozen/firmware DIRECTORY AS hello.py***
+
+## STEP 5: Transform hello.py To hello.c
+```bash
+python tools/make-frozen.py <GIT_REPO_FOLDER_PATH>/frozen/firmware > hello.c
+```
+
 ## STEP 6: Flash Firmware
 #### Instructions 
 ```bash

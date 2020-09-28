@@ -59,10 +59,7 @@ python tools/make-frozen.py <GIT_REPO_FOLDER_PATH>/frozen/firmware > hello.c
 ```
 
 ## STEP 9: Flash Firmware
-#### Instructions 
-```bash
-https://github.com/bbcmicrobit/micropython
-```
+[Instructions](https://github.com/bbcmicrobit/micropython)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

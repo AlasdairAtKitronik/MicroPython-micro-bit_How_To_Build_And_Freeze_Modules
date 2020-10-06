@@ -39,7 +39,7 @@ python tools/make-frozen.py <GIT_REPO_FOLDER_PATH>/frozen/firmware > hello.c
 ```
 
 ## STEP 6: Copy hello.c
-***PLACE FILE IN THE source/py DIRECTORY AS hello.py***
+***PLACE FILE IN THE source/py DIRECTORY AS hello.c***
 
 ## STEP 7: Edit inc/microbit/mpconfigport.h
 ***PLACE TWO LINES AFTER LINE 29***

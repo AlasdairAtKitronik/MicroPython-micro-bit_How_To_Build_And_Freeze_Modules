@@ -38,6 +38,34 @@ print('hello')
 python tools/make-frozen.py <GIT_REPO_FOLDER_PATH>/frozen/firmware > hello.c
 ```
 
+## OPTIONAL: Freezing Multiple Files
+To freeze multiple files there are some extra steps required to make sure the firmware builds correctly: 
+* Make sure there is only ever **one** .py file in the ***frozen/firmware*** directory, deleting the previous one before adding another.  
+* Repeat **STEP 5** for each .py which requires freezing
+* Now go up to the ***micropython*** directory - there will be several new .c files.
+* Open all the .c files **apart from the first one created**
+* Three variables are declared in each file:
+```bash
+#include <stdint.h>
+const char mp_frozen_str_names[] = {
+"\0"};
+const uint32_t mp_frozen_str_sizes[] = {
+0};
+const char mp_frozen_str_content[] = {
+"\0"};
+```
+* Change the names so that they are different in each .c file, for example, adding a number to the end of each one:
+```bash
+#include <stdint.h>
+const char mp_frozen_str_names2[] = {
+"\0"};
+const uint32_t mp_frozen_str_sizes2[] = {
+0};
+const char mp_frozen_str_content2[] = {
+"\0"};
+```
+* Now continue with the rest of the steps, in **STEP 6** placing all the .c files in the ***source/py*** directory.
+
 ## STEP 6: Copy hello.c
 ***PLACE FILE IN THE source/py DIRECTORY AS hello.c***
 
